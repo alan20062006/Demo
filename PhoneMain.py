@@ -1,7 +1,7 @@
 import sys
 from PyQt5.QtWidgets import (QWidget,QToolTip,QMainWindow,
                              QPushButton,QApplication,
-                             QLabel)
+                             QLabel,QLineEdit)
 from PyQt5.QtGui import QFont,QPalette
 from PyQt5.QtCore import QCoreApplication, pyqtSignal,QObject
 from BandMain import BandUI
@@ -72,6 +72,14 @@ class PhoneUI(QWidget):
         self.statusLine.setFixedWidth(150)
         #self.statusLine.setReadOnly(True)
         self.statusLine.move(150, 80)
+
+        #words
+        self.adviceLine=QLineEdit('Hello!',self)
+        self.adviceLine.setStyleSheet("color:rgb(30,30,30);")
+        self.adviceLine.move(80,150)
+        self.adviceLine.setFixedHeight(300)
+        self.adviceLine.setFixedWidth(230)
+        self.adviceLine.setReadOnly(True)
 
         self.setGeometry(650,300,400,600)
         #set background as white

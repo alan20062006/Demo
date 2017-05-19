@@ -3,7 +3,7 @@ from PyQt5.QtWidgets import (QWidget,QToolTip,QMainWindow,
                              QPushButton,QApplication,
                              QLabel)
 from PyQt5.QtGui import QFont,QPalette
-from PyQt5.QtCore import QCoreApplication
+from PyQt5.QtCore import QCoreApplication,QTimer
 from time import sleep
 
 class ServerUI(QWidget):
@@ -38,7 +38,9 @@ class ServerUI(QWidget):
 
     def sync(self):
         self.statusLabel.setText('Syncing...')
-        #sleep(3)
+        QTimer.singleShot(2000, lambda: self.statusLabel.setText('Succeed'))
+        QTimer.singleShot(5000, lambda: self.statusLabel.setText('Suspending'))
+        # sleep(3)
         #self.statusLabel.setText('Succeed')
         #sleep(2)
         #self.statusLabel.setText('Suspending')
