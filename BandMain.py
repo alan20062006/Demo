@@ -14,9 +14,9 @@ class BandUI(QWidget):
         self.status=0
         self.counter=0
         self.counterDict={'1':1, '2':1, '3':1, '4':1, '5':3, '6':5, '7':15, '8':0,'0':1}    #8 kernels & their sending speed
-        self.statusDict={'1': 'Jogging','2': 'Long Run','3':'Resting','4':'Climb or Jump',
+        self.statusDict={'1': 'Jogging','2': 'Long Run','3':'Resting','4':'Gym',
                       '5': 'Walking','6':'Slight Moving','7':'Sitting','8':'Sleeping','0':'Unwear'}
-        self.adviceDict={'1': 'Do some warm up','2': 'Watch out breath','3':'Do not stay stable','4':'Reach higher',
+        self.adviceDict={'1': 'Do some warm up','2': 'Watch out breath','3':'Do not stay stable','4':'You can do it',
                       '5': 'Boring','6':'...','7':'Stand up and walk every 45 min','8':'Ssh~','0':'Put up the Band'}
         self._timeStamp = 1488754980
         self._data=pd.read_csv('FinalData.csv')

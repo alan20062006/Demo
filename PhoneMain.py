@@ -9,7 +9,6 @@ from servermain import ServerUI
 from collections import deque
 import scipy.io as sio
 import numpy as np
-from time import sleep
 
 class communicate(QObject):
     changeSync=pyqtSignal()
@@ -77,9 +76,17 @@ class PhoneUI(QWidget):
         self.adviceLine=QLineEdit('Hello!',self)
         self.adviceLine.setStyleSheet("color:rgb(30,30,30);")
         self.adviceLine.move(80,150)
-        self.adviceLine.setFixedHeight(300)
+        self.adviceLine.setFixedHeight(125)
         self.adviceLine.setFixedWidth(230)
         self.adviceLine.setReadOnly(True)
+
+        #advertisement
+        self.adLine = QLineEdit('Shopping!', self)
+        self.adLine.setStyleSheet("color:rgb(30,30,30);")
+        self.adLine.move(80, 325)
+        self.adLine.setFixedHeight(125)
+        self.adLine.setFixedWidth(230)
+        self.adLine.setReadOnly(True)
 
         self.setGeometry(650,300,400,600)
         #set background as white
@@ -141,4 +148,5 @@ if __name__ == '__main__':
     Phone.setBandMain(Band)
     Band.setPhoneMain(Phone)
     Phone.setServerMain(Server)
+    Server.setPhoneMain(Phone)
     sys.exit(app.exec_())
